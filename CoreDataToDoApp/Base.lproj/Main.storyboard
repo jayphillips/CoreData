@@ -29,7 +29,7 @@
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="79.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0vQ-Gt-NOI">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Task" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0vQ-Gt-NOI">
                                                     <rect key="frame" x="25" y="21" width="325" height="38"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
@@ -82,12 +82,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="tXd-I0-prE">
-                                <rect key="frame" x="16" y="64" width="337" height="194"/>
-                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                            </textView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="k5o-dE-Tmo">
                                 <rect key="frame" x="170.5" y="318.5" width="34" height="30"/>
                                 <state key="normal" title="Save"/>
@@ -95,15 +89,22 @@
                                     <action selector="saveButtonPressed:" destination="fYC-c7-zbY" eventType="touchUpInside" id="XxK-3H-HgO"/>
                                 </connections>
                             </button>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="tXd-I0-prE">
+                                <rect key="frame" x="15" y="64" width="345" height="204.5"/>
+                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="k5o-dE-Tmo" firstAttribute="centerY" secondItem="Jtb-Ko-qjh" secondAttribute="centerY" id="2tP-PN-m6V"/>
-                            <constraint firstItem="tXd-I0-prE" firstAttribute="top" secondItem="gEj-b0-bEu" secondAttribute="top" id="3dA-Ju-mlH"/>
-                            <constraint firstItem="gEj-b0-bEu" firstAttribute="trailing" secondItem="tXd-I0-prE" secondAttribute="trailing" constant="10" id="Gek-82-ebk"/>
-                            <constraint firstItem="tXd-I0-prE" firstAttribute="leading" secondItem="gEj-b0-bEu" secondAttribute="leading" constant="10" id="PKw-ro-myp"/>
-                            <constraint firstItem="gEj-b0-bEu" firstAttribute="bottom" secondItem="tXd-I0-prE" secondAttribute="bottom" constant="410" id="ThR-of-os3"/>
-                            <constraint firstItem="k5o-dE-Tmo" firstAttribute="centerX" secondItem="Jtb-Ko-qjh" secondAttribute="centerX" id="dpJ-mx-b6Y"/>
+                            <constraint firstItem="tXd-I0-prE" firstAttribute="top" secondItem="gEj-b0-bEu" secondAttribute="top" id="2hg-pO-JIz"/>
+                            <constraint firstItem="tXd-I0-prE" firstAttribute="centerX" secondItem="Jtb-Ko-qjh" secondAttribute="centerX" id="QAC-gS-8Ku"/>
+                            <constraint firstItem="gEj-b0-bEu" firstAttribute="trailing" secondItem="tXd-I0-prE" secondAttribute="trailing" constant="15" id="Qmc-hs-kkD"/>
+                            <constraint firstItem="k5o-dE-Tmo" firstAttribute="top" secondItem="tXd-I0-prE" secondAttribute="bottom" constant="50" id="Su1-WF-QVD"/>
+                            <constraint firstItem="k5o-dE-Tmo" firstAttribute="centerY" secondItem="Jtb-Ko-qjh" secondAttribute="centerY" id="n5i-E4-9ny"/>
+                            <constraint firstItem="tXd-I0-prE" firstAttribute="leading" secondItem="gEj-b0-bEu" secondAttribute="leading" constant="15" id="tSg-NO-gKN"/>
+                            <constraint firstItem="k5o-dE-Tmo" firstAttribute="centerX" secondItem="Jtb-Ko-qjh" secondAttribute="centerX" id="z7Q-Eq-T1v"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="gEj-b0-bEu"/>
                     </view>

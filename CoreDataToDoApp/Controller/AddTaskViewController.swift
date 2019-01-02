@@ -16,8 +16,6 @@ class AddTaskViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        
     }
     
     func saveTask(completion: (_ finished: Bool) -> ()) {
@@ -48,6 +46,4 @@ class AddTaskViewController: UIViewController {
             }
         }
     }
-    
-
 }

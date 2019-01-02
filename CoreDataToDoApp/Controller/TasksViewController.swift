@@ -11,38 +11,26 @@ import CoreData
 
 class TasksViewController: UIViewController {
     
-    // IBOutlets
     @IBOutlet weak var tasksTableView: UITableView!
 
-    
-    
-    // Variables
     var tasks = [Tasks]()
-    
-    // Constants
     let taskCell = "taskCell"
     
-    
-    
-
     override func viewDidLoad() {
         super.viewDidLoad()
         setDelegates()
-        
-       }
+        }
     
     override func viewWillAppear(_ animated: Bool) {
         getTasks()
         tasksTableView.reloadData()
     }
     
-    // Functions
-    
     func setDelegates() {
         tasksTableView.dataSource = self
         tasksTableView.delegate = self
     }
-    
+  
     func getTasks() {
         getTask { (success) in
             if success {
@@ -57,11 +45,6 @@ class TasksViewController: UIViewController {
             }
         }
     }
-    
-    
-    // IBActions
-
-
 }
 
 extension TasksViewController: UITableViewDataSource, UITableViewDelegate {
@@ -75,7 +58,6 @@ extension TasksViewController: UITableViewDataSource, UITableViewDelegate {
         cell.taskLabel.text = task.taskDescription
         if task.taskStatus == true {
             cell.backgroundColor = #colorLiteral(red: 0.4666666687, green: 0.7647058964, blue: 0.2666666806, alpha: 1)
-            cell.taskLabel.text = "Completed"
             cell.taskLabel.textColor = #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)
         }
         return cell
@@ -96,13 +78,13 @@ extension TasksViewController: UITableViewDataSource, UITableViewDelegate {
             tableView.deleteRows(at: [indexPath], with: .automatic)
         }
         
-        let taskStatus = UITableViewRowAction(style: .normal, title: "Completed") { (action, indexPath) in
+        let taskStatus = UITableViewRowAction(style: .normal, title: "Complete") { (action, indexPath) in
             self.updateTaskStatus(indexPath: indexPath)
             self.getTasks()
             self.tasksTableView.reloadRows(at: [indexPath], with: .automatic)
         }
         delete.backgroundColor = #colorLiteral(red: 1, green: 0.1491314173, blue: 0, alpha: 1)
-        taskStatus.backgroundColor = #colorLiteral(red: 0.4666666687, green: 0.7647058964, blue: 0.2666666806, alpha: 1)
+        taskStatus.backgroundColor = #colorLiteral(red: 0.7254902124, green: 0.4784313738, blue: 0.09803921729, alpha: 1)
         
         return [delete, taskStatus]
     }
